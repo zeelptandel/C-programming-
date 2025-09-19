@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+    float a,b,c,d;
+    printf("Enter Fahrenheit: ", a);
+    scanf("%f", &a);
+    b = a-32;
+    c = b*5;
+    d = c/9;
+    printf("Celcius: %f", d);
+    return 0;
+}
