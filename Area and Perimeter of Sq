@@ -1,0 +1,11 @@
+#include <stdio.h>
+int main(){
+    float a,b,c,d;
+    printf("Enter Side of Square: ", a);
+    scanf("%f", &a);
+    b = a*a;
+    c = 4*a;
+    printf("Area of Square is : %f", b);
+    printf("\nPerimeter of Square is : %f", c);
+    return 0;
+}
