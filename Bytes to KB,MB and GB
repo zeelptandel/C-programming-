@@ -1,0 +1,14 @@
+#include <stdio.h>
+int main(){
+    float a,b,c,d;
+    printf("Enter Bytes: ", a);
+    scanf("%f", &a);
+    b = (a/1000);
+    printf("KB: %f\n", b);
+    c = (b/1000);
+    printf("MB: %f\n", c);
+    d = (c/1000);
+    printf("GB: %f\n", d);
+
+    return 0;
+}
