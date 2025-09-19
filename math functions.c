@@ -1,15 +1,15 @@
 #include <stdio.h>
 int main(){
-    int a=10,b=4;
-    float c=10,d=4;
-    printf("sum of numbers is ");
-    printf("%d\n",a+b);
-    printf("difference of numbers is ");
-    printf("%d\n",a-b);
-    printf("product of numbers is ");
-    printf("%d\n",a*b);
-    printf("division of numbers is ");
-    printf("%f\n",c/d);
+    int a,b;
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    printf("Sum of %d and %d is : %d ",a,b,a+b);
+    printf("Subtraction of %d and %d is : %d ",a,b,a-b);
+    printf("Multiplication of %d and %d is : %d ",a,b,a*b);
+    printf("Division of %d and %d is : %d ",a,b,a/b);
     return 0;
 }
+
 
