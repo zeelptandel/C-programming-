@@ -1,10 +1,11 @@
 #include <stdio.h>
 int main(){
-    int a,b;
+    float a,b,c;
     printf("Enter Dollars: ", a);
-    scanf("%d", &a);
-    b = a*(48/70);
-    printf("Pounds:%d", b);
+    scanf("%f", &a);
+    b = (a*48);
+    c = b/70;
+    printf("Pounds:%f", c);
 
     return 0;
 }
