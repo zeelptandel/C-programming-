@@ -1,0 +1,10 @@
+#include <stdio.h>
+int main(){
+    float a,b;
+    printf("Enter Gram: ", a);
+    scanf("%f", &a);
+    b = (a/1000);
+    printf("Kg: %f", b);
+
+    return 0;
+}
