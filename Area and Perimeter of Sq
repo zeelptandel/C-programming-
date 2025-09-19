@@ -1,6 +1,6 @@
 #include <stdio.h>
 int main(){
-    float a,b,c,d;
+    float a,b,c;
     printf("Enter Side of Square: ", a);
     scanf("%f", &a);
     b = a*a;
