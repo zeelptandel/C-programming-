@@ -6,10 +6,11 @@ int main(){
     printf("Enter second number: ");
     scanf("%d", &b);
     printf("Sum of %d and %d is : %d ",a,b,a+b);
-    printf("Subtraction of %d and %d is : %d ",a,b,a-b);
-    printf("Multiplication of %d and %d is : %d ",a,b,a*b);
-    printf("Division of %d and %d is : %d ",a,b,a/b);
+    printf("\nSubtraction of %d and %d is : %d ",a,b,a-b);
+    printf("\nMultiplication of %d and %d is : %d ",a,b,a*b);
+    printf("\nDivision of %d and %d is : %d ",a,b,a/b);
     return 0;
 }
+
 
 
