@@ -1,7 +1,12 @@
 #include <stdio.h>
 int main(){
-    int a=4,b=5;
-    printf("The product of two numbers is ");
-    printf("%d\n",a*b);
+    int a,b;
+    printf("Enter first number: ");
+    scanf("%d", &a);
+    printf("Enter second number: ");
+    scanf("%d", &b);
+    printf("Multiplication of %d and %d is : %d ",a,b,a*b);
     return 0;
 }
+
+
