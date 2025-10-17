@@ -1,13 +1,14 @@
 #include<stdio.h>
 int main()
 {
-    int n;
+    int n,m;
     printf("Enter the value of even numbers to print :");
     scanf("%d",&n);
 for(int i=1;i<=n;i++)
 {
-if(i%2==0)
-printf("%d\n",i);
+m = i*2;
+printf("%d\n",m);
 }
 return 0;
 }
+
