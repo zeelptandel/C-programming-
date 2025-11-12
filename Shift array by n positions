@@ -1,0 +1,56 @@
+#include <stdio.h>
+
+void leftShift(int arr[], int n, int positions) {
+    int i;
+    for(i = 0; i < 10 - positions; i++) {
+        arr[i] = arr[i + positions];
+    }
+    for(i = 10 - positions; i < 10; i++) {
+        arr[i] = 0;
+    }
+}
+
+void rightShift(int arr[], int n, int positions) {
+    int i;
+    for(i = 9; i >= positions; i--) {
+        arr[i] = arr[i - positions];
+    }
+    for(i = 0; i < positions; i++) {
+        arr[i] = 0;
+    }
+}
+
+int main() {
+    int arr[10] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10};
+    int temp[10], positions, direction, i;
+    
+    // Create a copy for display
+    for(i = 0; i < 10; i++) {
+        temp[i] = arr[i];
+    }
+    
+    printf("Original array: ");
+    for(i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    printf("\nEnter number of positions to shift: ");
+    scanf("%d", &positions);
+    
+    printf("Enter direction (1 for Left, 2 for Right): ");
+    scanf("%d", &direction);
+    
+    if(direction == 1) {
+        leftShift(arr, 10, positions);
+        printf("After left shift by %d positions: ", positions);
+    } else {
+        rightShift(arr, 10, positions);
+        printf("After right shift by %d positions: ", positions);
+    }
+    
+    for(i = 0; i < 10; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
