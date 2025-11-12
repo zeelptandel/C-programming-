@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int arr[10] = {10, 20, 30, 40, 50, 30, 60, 70, 30, 80};
+    int n = 10;
+    int value, i, found = 0, positions[10], count = 0;
+    
+    printf("Array: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    printf("\nEnter value to search: ");
+    scanf("%d", &value);
+    
+    // Linear search
+    for(i = 0; i < n; i++) {
+        if(arr[i] == value) {
+            positions[count] = i;
+            count++;
+            found = 1;
+        }
+    }
+    
+    if(found) {
+        printf("Value %d found at position(s): ", value);
+        for(i = 0; i < count; i++) {
+            printf("%d ", positions[i] + 1); // +1 for 1-based position
+        }
+        printf("\nTotal occurrences: %d\n", count);
+    } else {
+        printf("Value %d not found in array!\n", value);
+    }
+    
+    return 0;
+}
