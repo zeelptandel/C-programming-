@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Cricketer {
+    char name[50];
+    int age;
+    int tests;
+    double avgRuns;
+};
+
+int main() {
+    struct Cricketer players[10] = {
+        {"Sachin", 47, 200, 53.78},
+        {"Ponting", 46, 168, 51.85},
+        {"Kallis", 45, 166, 55.37},
+        {"Dravid", 48, 164, 52.31},
+        {"Lara", 52, 131, 52.88},
+        {"Tendulkar", 47, 200, 53.78},
+        {"Smith", 32, 75, 62.84},
+        {"Root", 30, 65, 50.89},
+        {"Kohli", 33, 92, 59.07},
+        {"Bradman", 92, 52, 99.94}
+    };
+
+    // Sorting ascending by avgRuns (Bubble sort)
+    for(int i = 0; i < 10 - 1; i++)
+        for(int j = 0; j < 10 - i - 1; j++)
+            if(players[j].avgRuns > players[j + 1].avgRuns) {
+                struct Cricketer temp = players[j];
+                players[j] = players[j + 1];
+                players[j + 1] = temp;
+            }
+
+    printf("Cricketers sorted by average runs:\n");
+    for(int i = 0; i < 10; i++)
+        printf("%s - Avg Runs: %.2lf\n", players[i].name, players[i].avgRuns);
+
+    return 0;
+}
