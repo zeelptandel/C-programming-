@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int arr[20] = {10, 20, 30, 40, 50}; // Initial array with some values
+    int n = 5; // Current number of elements
+    int newValue, i;
+    
+    printf("Original array: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    printf("\nEnter value to insert at beginning: ");
+    scanf("%d", &newValue);
+    
+    // Shift elements to right
+    for(i = n; i > 0; i--) {
+        arr[i] = arr[i-1];
+    }
+    
+    // Insert at beginning
+    arr[0] = newValue;
+    n++; // Increase element count
+    
+    printf("Array after insertion: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
