@@ -1,0 +1,39 @@
+#include <stdio.h>
+#include <string.h>
+#include <ctype.h>
+
+int main() {
+    char str[100];
+    int countA = 0, countE = 0, countI = 0, countO = 0, countU = 0;
+    int i;
+    
+    printf("Enter a string: ");
+    fgets(str, sizeof(str), stdin);
+    str[strcspn(str, "\n")] = '\0';
+    
+    printf("Original string: %s\n", str);
+    
+    // Count vowels
+    for(i = 0; str[i] != '\0'; i++) {
+        char ch = tolower(str[i]);
+        switch(ch) {
+            case 'a': countA++; break;
+            case 'e': countE++; break;
+            case 'i': countI++; break;
+            case 'o': countO++; break;
+            case 'u': countU++; break;
+        }
+    }
+    
+    printf("\nVowel Frequency:\n");
+    printf("A/a: %d\n", countA);
+    printf("E/e: %d\n", countE);
+    printf("I/i: %d\n", countI);
+    printf("O/o: %d\n", countO);
+    printf("U/u: %d\n", countU);
+    
+    int totalVowels = countA + countE + countI + countO + countU;
+    printf("Total vowels: %d\n", totalVowels);
+    
+    return 0;
+}
