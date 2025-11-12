@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+int main() {
+    int source[5], destination[10] = {0}; // Initialize destination with 0
+    int i, j = 0;
+    
+    printf("Enter 5 elements for source array:\n");
+    for(i = 0; i < 5; i++) {
+        printf("Enter element %d: ", i+1);
+        scanf("%d", &source[i]);
+    }
+    
+    // Copy skipping one element (skipping 3rd element - index 2)
+    for(i = 0; i < 5; i++) {
+        if(i != 2) { // Skip the 3rd element
+            destination[j] = source[i];
+            j++;
+        }
+    }
+    
+    printf("\nSource array: ");
+    for(i = 0; i < 5; i++) {
+        printf("%d ", source[i]);
+    }
+    
+    printf("\nDestination array: ");
+    for(i = 0; i < 10; i++) {
+        printf("%d ", destination[i]);
+    }
+    
+    return 0;
+}
