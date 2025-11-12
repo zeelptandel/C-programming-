@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int notes[] = {500, 200, 100, 50, 20, 10, 5, 2, 1};
+    int numNotes[9] = {0}; // To store count of each note
+    int amount, i;
+    
+    printf("Enter the amount: ");
+    scanf("%d", &amount);
+    
+    int temp = amount;
+    for(i = 0; i < 9; i++) {
+        if(temp >= notes[i]) {
+            numNotes[i] = temp / notes[i];
+            temp = temp % notes[i];
+        }
+    }
+    
+    printf("\nMinimum notes required for %d:\n", amount);
+    for(i = 0; i < 9; i++) {
+        if(numNotes[i] > 0) {
+            printf("%d note(s) of %d Rs.\n", numNotes[i], notes[i]);
+        }
+    }
+    
+    return 0;
+}
