@@ -1,0 +1,39 @@
+#include <stdio.h>
+
+int main() {
+    int arr[20] = {10, 20, 30, 40, 50};
+    int n = 5;
+    int newValue, pos, i;
+    
+    printf("Original array: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    printf("\nEnter value to insert: ");
+    scanf("%d", &newValue);
+    
+    printf("Enter position (1 to %d): ", n+1);
+    scanf("%d", &pos);
+    
+    if(pos < 1 || pos > n+1) {
+        printf("Invalid position!\n");
+        return 1;
+    }
+    
+    // Shift elements to right from the position
+    for(i = n; i >= pos; i--) {
+        arr[i] = arr[i-1];
+    }
+    
+    // Insert at position
+    arr[pos-1] = newValue;
+    n++;
+    
+    printf("Array after insertion: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
