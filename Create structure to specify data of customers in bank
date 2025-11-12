@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Customer {
+    int accNo;
+    char name[50];
+    double balance;
+};
+
+void printLowBalance(struct Customer c[], int n) {
+    printf("Customers with balance below Rs. 100:\n");
+    for(int i = 0; i < n; i++) {
+        if(c[i].balance < 100)
+            printf("AccNo: %d, Name: %s, Balance: %.2lf\n", c[i].accNo, c[i].name, c[i].balance);
+    }
+}
+
+void transaction(struct Customer c[], int n, int accNo, double amount, int code) {
+    for(int i = 0; i < n; i++) {
+        if(c[i].accNo == accNo) {
+            if(code == 1) { // deposit
+                c[i].balance += amount;
+                printf("Amount deposited. New balance = %.2lf\n", c[i].balance);
+            } else if(code == 0) { // withdrawal
+                if(c[i].balance >= amount) {
+                    c[i].balance -= amount;
+                    printf("Amount withdrawn. New balance = %.2lf\n", c[i].balance);
+                } else {
+                    printf("The balance is insufficient for the specified withdrawal.\n");
+                }
+            }
+            return;
+        }
+    }
+    printf("Account number %d not found.\n", accNo);
+}
+
+int main() {
+    struct Customer customers[10] = {
+        {101,"Alice",150.0},
+        {102,"Bob",50.0},
+        {103,"Charlie",500.0},
+        {104,"David",90.0},
+        {105,"Eva",1000.0},
+        {106,"Frank",75.0},
+        {107,"Grace",120.0},
+        {108,"Helen",60.0},
+        {109,"Ian",300.0},
+        {110,"Jane",200.0}
+    };
+
+    printLowBalance(customers, 10);
+
+    int accNo, code;
+    double amount;
+    printf("\nEnter Account Number, Amount and Code (1 for deposit, 0 for withdrawal): ");
+    scanf("%d %lf %d", &accNo, &amount, &code);
+    transaction(customers, 10, accNo, amount, code);
+
+    return 0;
+}
