@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    int arr[20] = {10, 20, 30, 40, 50};
+    int n = 5;
+    int newValue, i;
+    
+    printf("Original array: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    printf("\nEnter value to insert at end: ");
+    scanf("%d", &newValue);
+    
+    // Insert at end
+    arr[n] = newValue;
+    n++;
+    
+    printf("Array after insertion: ");
+    for(i = 0; i < n; i++) {
+        printf("%d ", arr[i]);
+    }
+    
+    return 0;
+}
