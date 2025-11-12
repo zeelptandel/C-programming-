@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    FILE *fp;
+    char line[200];
+
+    fp = fopen("output.txt", "w");
+    if(fp == NULL) {
+        printf("Cannot open file.\n");
+        return 1;
+    }
+
+    printf("Enter lines (type 'END' to stop):\n");
+    while(1) {
+        gets(line); // reads line including spaces
+        if(strcmp(line, "END") == 0) break;
+        fputs(line, fp);
+        fputs("\n", fp);
+    }
+
+    fclose(fp);
+    printf("Lines written to file.\n");
+
+    return 0;
+}
