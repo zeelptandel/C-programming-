@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+    int num, reversed = 0, digit;
+
+    scanf("%d", &num);
+
+    while (num > 0)
+    {
+        digit = num % 10;
+        reversed = reversed * 10 + digit;
+        num = num / 10;
+    }
+
+    while (reversed > 0)
+    {
+        digit = reversed % 10;
+        printf("%d
+", digit);
+        reversed = reversed / 10;
+    }
+
+    return 0;
+}
