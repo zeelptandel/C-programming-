@@ -1,0 +1,35 @@
+#include <stdio.h>
+#include <string.h>
+
+int main() {
+    FILE *fp;
+    int roll;
+    char name[50], choice;
+
+    fp = fopen("students.csv", "w");
+    if(fp == NULL) {
+        printf("Cannot open file.\n");
+        return 1;
+    }
+
+    fprintf(fp, "Roll No,Name\n"); // CSV header
+
+    do {
+        printf("Enter Roll No: ");
+        scanf("%d", &roll);
+        getchar(); // consume newline
+        printf("Enter Name: ");
+        gets(name);
+
+        fprintf(fp, "%d,%s\n", roll, name);
+
+        printf("Do you want to enter another record? (y/n): ");
+        scanf(" %c", &choice);
+        getchar(); // consume newline
+    } while(choice == 'y' || choice == 'Y');
+
+    fclose(fp);
+    printf("Records saved in students.csv (can be opened in Excel).\n");
+
+    return 0;
+}
