@@ -1,0 +1,38 @@
+#include <stdio.h>
+#define SIZE 3
+
+int main() {
+    int arr1[SIZE][SIZE], arr2[SIZE][SIZE], result[SIZE][SIZE];
+    int i, j;
+    
+    printf("Enter elements of first %dx%d matrix:\n", SIZE, SIZE);
+    for(i = 0; i < SIZE; i++) {
+        for(j = 0; j < SIZE; j++) {
+            scanf("%d", &arr1[i][j]);
+        }
+    }
+    
+    printf("Enter elements of second %dx%d matrix:\n", SIZE, SIZE);
+    for(i = 0; i < SIZE; i++) {
+        for(j = 0; j < SIZE; j++) {
+            scanf("%d", &arr2[i][j]);
+        }
+    }
+    
+    // Adding two matrices
+    for(i = 0; i < SIZE; i++) {
+        for(j = 0; j < SIZE; j++) {
+            result[i][j] = arr1[i][j] + arr2[i][j];
+        }
+    }
+    
+    printf("\nResultant matrix after addition:\n");
+    for(i = 0; i < SIZE; i++) {
+        for(j = 0; j < SIZE; j++) {
+            printf("%d ", result[i][j]);
+        }
+        printf("\n");
+    }
+    
+    return 0;
+}
