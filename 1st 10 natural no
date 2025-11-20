@@ -2,12 +2,10 @@
 
 int main() {
     int i;
-    printf("The first 10 natural numbers are:
-");
+    printf("The first 10 natural numbers are:");
     for (i = 1; i <= 10; i++) {
         printf("%d ", i);
     }
-    printf("
-");
+    printf("\n");
     return 0;
 }
